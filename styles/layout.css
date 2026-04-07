@@ -1,0 +1,66 @@
+#app {
+  display: grid;
+  grid-template-columns: 32.79% 67.21%;
+
+  &::before {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background: var(--shape-background);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+}
+
+aside {
+  /* overflow: hidden; */
+  & .aside-container {
+    /* max-width: 25rem; */
+    height: 100vh;
+    margin-left: auto;
+    
+    position: relative;
+  }
+
+  & header {
+    padding: calc(4rem - 1.25rem);
+    
+    & h1 {
+      margin-top: 1rem;
+      font: 400 2.5rem "Leckerli One", sans-serif;
+      color: var(--pink);
+    }
+    
+    & p {
+      margin-top: .25rem;
+      font: 300 1rem var(--font-family);
+      color: var(--text-heading);
+    }
+  }
+
+  & .image-wrapper {
+    &::before {
+      content: "";
+      background: url(../assets/background.png) 
+      center/cover no-repeat;
+      max-width: 100%;
+      max-height: 45.5rem;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      margin: 1.25rem 0 1.25rem 1.25rem;
+      border-radius: .75rem;
+    }
+  }
+}
+
+main {
+  height: 100vh;
+  overflow: auto;
+
+  & .main-container { 
+    /* max-width: 51.25rem; */
+  }
+}

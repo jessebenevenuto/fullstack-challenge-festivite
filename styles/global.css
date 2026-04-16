@@ -1,15 +1,23 @@
-* {
+@import url("./utilities.css");
+@import url("./aside.css");
+@import url("./main.css");
+@import url("./forms/forms.css");
+
+*{
   margin: 0;
   padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
-:root {
+:root{
+  /* colors */
   --brand-light: #59B2FF;
   --brand-mid: #3487CF;
   --brand-dark: #1D6FB6;
+
   --purple: #B259FF;
-  --fuschia: #FF59F9;
+  --fuchsia: #FF59F9;
   --pink: #FF598B;
   --orange: #FF8B59;
   --yellow: #FFCD59;
@@ -18,37 +26,63 @@
   --cyan: #59FFF9;
   --navy: #6A59FF;
   --danger: #FF5959;
+
   --input-base: #1C1F21;
   --input-stroke: #363B40;
   --input-placeholder: #869198;
+
   --shape-background: #131516;
   --shape-body: #212427;
   --shape-button: #2D3136;
   --shape-hover: #383D42;
+
   --text-body: #C8CDD0;
   --text-heading: #F9F9F9;
 
-  --font-family: "Open Sans", sans-serif;
+  /* typography and fonts */
+  --logo-font: "Leckerli One", cursive;
+  --heading-font: "Baloo 2", sans-serif;
+  --body-font: "Open Sans", sans-serif;
 
-  --heading-md: 700 1.75rem "Baloo 2", sans-serif;
-  --heading-sm: 700 1.125rem "Baloo 2", sans-serif;
-  --text-md: 400 1rem var(--font-family);
-  --text-sm: 400 .875rem var(--font-family);
-  --text-xs: 400 .75rem var(--font-family);
+  --logo: 400 2.5rem var(--logo-font);
+  --heading-md: 700 1.75rem var(--heading-font);
+  --heading-sm: 700 1.125rem var(--heading-font);
+  --body-md: 500 1rem var(--body-font);
+  --body-sm: 500 .875rem var(--body-font);
+  --body-xs: 500 .75rem var(--body-font);
 }
 
-body {
-  font: 400 1rem var(--font-family);
-  color: var(--input-placeholder);
-
-  overflow: hidden;
+html, body{
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
 }
 
-/* utility css */
-.flex {
-  display: flex;
+body{
+  background-color: var(--shape-background);
+  font: var(--body-md);
 }
 
-.flex-1 {
-  flex: 1;
+#app{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: 
+  "aside main";
+  gap: 1.25rem;
+
+  padding: 1.25rem;
+}
+
+img{
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 950px){
+  #app{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "aside"
+    "main";
+  }
 }
